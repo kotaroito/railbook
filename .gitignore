@@ -17,3 +17,7 @@
 
 # Ignore vendor
 /vendor/
+
+# ctags
+tags
+gems.tags
