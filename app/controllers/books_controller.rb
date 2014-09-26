@@ -12,6 +12,10 @@ class BooksController < ApplicationController
       @books = Book.where('published > ?', two_years_ago).order(published: :desc)
   end
 
+  def publisher
+      @books = Book.publisher(params[:publisher])
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show

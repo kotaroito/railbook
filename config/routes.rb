@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'hello/list' => 'hello#list'
   get 'books/recent/' => 'books#recent'
+  get 'books/publisher/:publisher' => 'books#publisher'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

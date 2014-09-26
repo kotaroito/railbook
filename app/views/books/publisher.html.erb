@@ -1,0 +1,9 @@
+<h1>Listing books</h1>
+
+<summary>count:<%= @books.count %></summary>
+<%= render 'table', books: @books %>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
+<%= link_to 'All Books', books_path %>
