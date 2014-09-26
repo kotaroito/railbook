@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+/vendor/bundle/
+/vendor/bin/
+
 # ctags
 tags
 gems.tags

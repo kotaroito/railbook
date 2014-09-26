@@ -8,7 +8,8 @@ class BooksController < ApplicationController
   end
 
   def recent
-      @books = Book.all
+      two_years_ago = (Time.now - 2 * 365 * 86400).strftime('%Y-%m-%d')
+      @books = Book.where('published > ?', two_years_ago).order(published: :desc)
   end
 
   # GET /books/1
