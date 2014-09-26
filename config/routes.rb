@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :books
+  resources :books, constraints: { id: /[0-9]+/ }
 
   get 'hello/list' => 'hello#list'
+  get 'books/recent/' => 'books#recent'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
