@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926061352) do
+ActiveRecord::Schema.define(version: 20140926084058) do
 
   create_table "authors", force: true do |t|
     t.integer  "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140926061352) do
     t.boolean  "cd"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lock_version", default: 0
   end
 
   add_index "books", ["publish", "published"], name: "idx_publish_published", using: :btree
