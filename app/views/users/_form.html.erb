@@ -28,6 +28,10 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :email_confirmation %><br>
+    <%= f.text_field :email_confirmation %>
+  </div>
+  <div class="field">
     <%= f.label :dm %><br>
     <%= f.check_box :dm %>
   </div>
@@ -39,6 +43,12 @@
     <%= f.label :reviews_count %><br>
     <%= f.number_field :reviews_count %>
   </div>
+  <% if action_name == 'new' %>
+  <div class="field">
+    <%= f.label :agreement %><br>
+    <%= f.check_box :agreement %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
