@@ -5,6 +5,9 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
       @books = Book.includes(:authors).all
+
+#      logger.info config.active_record.inspect
+      logger.info $:
   end
 
   def recent
