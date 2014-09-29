@@ -8,6 +8,7 @@
       <th>Publish</th>
       <th>Published</th>
       <th>Cd</th>
+      <th>Author</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
         <td><%= book.publish %></td>
         <td><%= book.published %></td>
         <td><%= book.cd %></td>
+        <td><%= book.authors.map{|author| author.name }.join(%q|,|) %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

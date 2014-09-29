@@ -31,8 +31,8 @@
 </p>
 
 <p>
-    <strong>Reviewed Books(<%= @user.reviews_count %>)</strong>
-  <% unless @user.books.empty? %>
+    <strong>Reviewed Books(<%= @user.reviews.size %>)</strong>
+    <% if @user.revies.size > 0 %>
       <ul>
           <% @user.books.uniq.each do |book| %>
               <li><%= link_to book.title, book_path(book) %></li>
