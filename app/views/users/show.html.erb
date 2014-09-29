@@ -31,9 +31,16 @@
 </p>
 
 <p>
-  <strong>Reviews count:</strong>
-  <%= @user.reviews_count %>
+    <strong>Reviewed Books(<%= @user.reviews_count %>)</strong>
+  <% unless @user.books.empty? %>
+      <ul>
+          <% @user.books.uniq.each do |book| %>
+              <li><%= link_to book.title, book_path(book) %></li>
+          <% end %>
+      </ul>
+  <% end %>
 </p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
