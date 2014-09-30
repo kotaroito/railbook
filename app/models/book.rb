@@ -18,11 +18,5 @@ class Book < ActiveRecord::Base
     scope :publisher, ->(pub) {
         where(publish: pub).order(published: :desc).limit(10)
     }
-    after_destroy :history_book,
-        unless: Proc.new { |b| b.publish == 'unknown' }
-
-    private
-    def history_book
-        logger.info('deleted: ' + self.inspect)
-    end
+    after_destroy BookCallbacks.new
 end

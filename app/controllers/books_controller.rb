@@ -7,7 +7,7 @@ class BooksController < ApplicationController
       @books = Book.includes(:authors).all
 
 #      logger.info config.active_record.inspect
-      logger.info $:
+      logger.info Railbook::Application.config.autoload_paths
   end
 
   def recent
