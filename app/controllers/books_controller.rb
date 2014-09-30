@@ -5,9 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
       @books = Book.includes(:authors).all
-
-#      logger.info config.active_record.inspect
-      logger.info Railbook::Application.config.autoload_paths
+      logger.info session[:site_access_counter]
   end
 
   def recent
