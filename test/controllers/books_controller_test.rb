@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BooksControllerTest < ActionController::TestCase
   setup do
-    @book = books(:one)
+    @book = books(:jslib)
   end
 
   test "should get index" do
@@ -45,5 +45,11 @@ class BooksControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to books_path
+  end
+
+  test "should get recent" do
+    get :recent
+    assert_response :success
+    assert_equal 5, assigns(:books).size, 'found rows is wrong'
   end
 end
