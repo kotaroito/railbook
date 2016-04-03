@@ -21,3 +21,6 @@
 # ctags
 tags
 gems.tags
+
+# npm
+/node_modules/

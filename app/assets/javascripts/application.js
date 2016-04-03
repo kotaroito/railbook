@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+var add = require('./math/add');
+console.log('hello');
+console.log(add(1, 2));
+
+var arr = [1, 1, 2, 2, 3, 5];
+require("uniq")(arr);
+console.log(arr);
